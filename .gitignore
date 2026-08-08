@@ -1,0 +1,46 @@
+# PlatformIO
+.pio/
+.vscode/
+build/
+.clang_complete
+.gcc-flags.json
+
+# IDE
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Compiled
+*.o
+*.a
+*.so
+*.elf
+*.bin
+*.hex
+*.uf2
+
+# Dependencies
+.pioenvs/
+lib/
+firmware/lib/
+
+# Logs
+*.log
+*.log.*
+
+# OS
+Thumbs.db
+.DS_Store
+*.tmp
+
+# Custom
+*.bak
+config_local.h
+*.sublime-project
+*.sublime-workspace
+
+# Generated
+__pycache__/
+*.pyc
