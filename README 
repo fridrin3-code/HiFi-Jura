@@ -1,0 +1,25 @@
+# 🎵 Hi-fi Jura - Bezdrátové Domácí Kino
+
+Projekt pro vytvoření bezdrátového domácího kina s HiFi zvukem na ESP32 s PCM5102A DAC modulem a reaktivní LED vizualizací.
+
+## 📋 Funkce
+
+- ✅ **Bluetooth A2DP** - Streamování zvuku z telefonu/počítače
+- ✅ **WiFi Streaming** - Podpora místní sítě
+- ✅ **HiFi DAC** - PCM5102A pro kvalitní zvuk
+- ✅ **Reaktivní LED** - 10x NeoPixel páska reagující na hudbu
+  - 🔴 **Červená** = Basy (nízké frekvence)
+  - 🔵 **Modrá** = Tichá hlasitost
+  - Počet rozsvícených diod = hlasitost
+- ✅ **Webové ovládání** - Regulace hlasitosti, efektů
+- ✅ **Fyzická tlačítka** - Ovládání bez internetu
+
+## 🔧 Hardware
+
+### Komponenty:
+- **ESP32** - Hlavní řídící jednotka
+- **PCM5102A DAC** - Konvertor digitálního signálu na analogový
+- **WS2812B NeoPixel LED** - 10 kusů adresovatelných LED diod
+- **Reproduktory** - 2x 4Ω nebo 8Ω
+
+### Zapojení PCM5102A s ESP32:
