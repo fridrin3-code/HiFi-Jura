@@ -1,0 +1,37 @@
+#include "AudioTools.h"
+#include "BluetoothA2DPSink.h"
+
+// I2S stream and A2DP sink
+I2SStream i2sStream; 
+BluetoothA2DPSink a2dp_sink(i2sStream); 
+
+void setup() {
+  Serial.begin(115200);
+
+  // Configure I2S for PCM5102 (stereo TX)
+  auto config = i2sStream.defaultConfig(TX_MODE);
+
+  // Safer default pins (adjust to your board; avoid boot/strapping pins)
+  config.pin_bck  = 26;   // BCK / SCK
+  config.pin_ws   = 25;   // LCK / WS
+  config.pin_data = 22;   // DIN -> PCM5102
+
+  // I2S format (PCM5102 uses standard I2S)
+  config.i2s_format = I2S_STD_FORMAT;
+
+  // Explicit audio parameters (if your AudioTools version exposes them)
+  // If these fields do not exist in your config struct, remove or set via the library API.
+  config.sample_rate = 44100;       // typical A2DP source rate
+  config.bits_per_sample = 32;      // PCM5102 commonly used with 16 or 24 bits
+  config.channels = 2;              // stereo
+
+  // Initialize I2S output
+  i2sStream.begin(config);
+
+  // Start Bluetooth (name shown on phone)
+  a2dp_sink.start("Jura_HiFi");
+}
+
+void loop() {
+  // Streaming runs in background (DMA/interrupt)
+}
